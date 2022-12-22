@@ -18,6 +18,8 @@ type API struct {
 	BaseURL    string
 	headers    http.Header
 	httpClient *http.Client
+
+	Debug bool
 }
 
 func New(secret string) *API {
@@ -52,6 +54,10 @@ func (api *API) request(ctx context.Context, method, uri string, reqBody io.Read
 	resp, err := api.httpClient.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("HTTP request failed: %w", err)
+	}
+
+	if api.Debug {
+		fmt.Printf("tsumby-go [DEBUG] REQUEST Method:%v URI:%s Headers:%#v Body:%v\n", method, api.BaseURL+uri, headers, nil)
 	}
 
 	return resp, nil
