@@ -19,8 +19,8 @@ func TestRequestCreate(t *testing.T) {
 	client.BaseURL = testBasePath
 
 	img, err := client.Create(context.Background(), Params{
-		Image: "https://raw.githubusercontent.com/cshum/imagor/master/testdata/dancing-banana.gif",
-		Width: 500,
+		Image: "https://raw.githubusercontent.com/tsumby/tsumby-go/main/testdata/nft_rats.gif",
+		Width: 200,
 		Filters: Filters{
 			Filter{
 				Name: "quality",
