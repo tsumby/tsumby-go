@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	testBasePath = "http://localhost:8000"
+	testBasePath = "http://localhost:8000/"
 	testSecret   = "secret"
 )
 

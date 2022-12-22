@@ -18,7 +18,7 @@ func (api *API) Create(ctx context.Context, p Params) (*Image, error) {
 	path := Generate(p, NewHMACSigner(sha256.New, 40, api.APISecret))
 
 	// do HTTP request
-	uri := fmt.Sprintf("/%s", path)
+	uri := fmt.Sprintf("%s", path)
 
 	var respBody []byte
 	var err error
